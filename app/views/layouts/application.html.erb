@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Avito Clone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag 'carousel', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+  <body>
+    <!-- Header/Navbar -->
+    <header class="fixed top-0 w-full bg-white custom-shadow z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <%= link_to root_path, class: "flex items-center" do %>
+              <span class="text-xl font-poppins">
+              <%= image_tag "Avito_logo.png", class: "custom-logo-size mr-2", alt: "Avito Logo" %>
+              </span>
+            <% end %>
+
+            
+            <!-- Main navigation -->
+            <nav class="ml-10 hidden md:block">
+              <ul class="flex space-x-6">
+                <li><%= link_to "Auto Neuf", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+                <li><%= link_to "Immo Neuf", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+                <li><%= link_to "Crédit Immobilier", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+                <li><%= link_to "Crédit Conso", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+                <li><%= link_to "Boutiques", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+                <li><%= link_to "Magazine", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+              </ul>
+            </nav>
+          </div>
+          
+          <!-- User actions -->
+          <div class="flex items-center space-x-4">
+            <%= link_to "Se Connecter", login_path, class: "text-gray-600 hover:text-blue-500" %>
+           <%= link_to new_listing_path, class: "flex items-center px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600" do %>
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+           <span>Publier une annonce</span>
+           <% end %>     
+            <%= link_to root_path, class: "flex items-center" do %>
+              <span class="text-xl font-poppins">
+              <%= image_tag "Centre_Appel.png", class: "custom-logo-size mr-2", alt: "CentreAppel" %>
+              </span>
+            <% end %>    
+            <%= link_to "العربية", "#", class: "px-6 py-2 text-gray-600 border rounded-full" %>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main content -->
+    <main>
+      <%= yield %>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-10 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="font-semibold text-gray-800 mb-4">À propos d'Avito</h3>
+            <ul class="space-y-2">
+              <li><%= link_to "Qui sommes-nous", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+              <li><%= link_to "Conditions d'utilisation", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+              <li><%= link_to "Politique de confidentialité", "#", class: "text-gray-600 hover:text-blue-500" %></li>
+            </ul>
+          </div>
+          <!-- Add other footer sections as needed -->
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

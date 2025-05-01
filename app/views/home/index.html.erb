@@ -1,0 +1,639 @@
+<!-- Search section -->
+<div class="container mx-auto px-4 py-6">
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="flex flex-col md:flex-row">
+      <!-- Search input -->
+      <div class="flex-1 p-2">
+        <input type="text" placeholder="Que recherchez-vous ?" class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      
+      <!-- Categories dropdown -->
+      <div class="w-full md:w-64 p-2">
+        <button class="w-full flex items-center justify-between px-4 py-3 bg-white border rounded-md">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <span>Toutes les catégories</span>
+          </div>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Location dropdown -->
+      <div class="w-full md:w-64 p-2">
+        <button class="w-full flex items-center justify-between px-4 py-3 bg-white border rounded-md">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Choisir ville - secteur</span>
+          </div>
+        </button>
+      </div>
+      
+      <!-- Search button -->
+      <div class="p-2">
+        <button class="w-full px-6 py-3 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600">
+          Rechercher
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main categories -->
+<div class="container mx-auto px-4 py-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Immobilier category -->
+    <div class="bg-blue-50 p-6 rounded-lg flex items-center">
+      <div class="bg-blue-100 p-3 rounded-lg mr-4">
+        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-medium">Immobilier</h3>
+    </div>
+    
+    <!-- Véhicules category -->
+    <div class="bg-red-50 p-6 rounded-lg flex items-center">
+      <div class="bg-red-100 p-3 rounded-lg mr-4">
+        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-medium">Véhicules</h3>
+    </div>
+    
+    <!-- Marketplace category -->
+    <div class="bg-green-50 p-6 rounded-lg flex items-center">
+      <div class="bg-green-100 p-3 rounded-lg mr-4">
+        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-medium">Marketplace</h3>
+    </div>
+    
+    <!-- Emplois et Services category -->
+    <div class="bg-purple-50 p-6 rounded-lg flex items-center">
+      <div class="bg-purple-100 p-3 rounded-lg mr-4">
+        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-medium">Emplois et Services</h3>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center">
+  <%= image_tag "Publicity.png", alt: "Publicité Geely Emgrand", class: "px-6 py-3 rounded shadow-lg", width: "1400", height: "300" %>
+</div>
+
+ <div class="style-492">
+                        <h2 class="style-493">Catégories populaires</h2>
+                        <div class="style-494">
+                            <div class="style-495">
+                                <div class="style-496">
+                                    <div class="style-497">
+                                        <div class="style-498">
+                                            <div data-index="0" class="style-499" tabindex="-1" aria-hidden="false">
+                                                <div class="style-500"><a href="https://www.avito.ma/fr/maroc/voitures_d_occasion-à_vendre" class="style-501">
+                                                        <div class="style-502">
+                                                            <div class="style-503"><img src="https://assets.avito.ma/icons/svg/category_2010.svg" alt="Card Image" class="style-504" /></div><span class="style-505">Voitures d'occasion</span>
+                                                        </div><span class="style-506">Voitures d'occasion</span>
+                                                    </a></div>
+                                            </div>
+                                     
+
+            <!-- Carte 2 -->
+            <div data-index="1" class="style-507" tabindex="-1" aria-hidden="false">
+              <div class="style-508">
+                <a href="https://www.avito.ma/fr/maroc/motos-à_vendre" class="style-509">
+                  <div class="style-510">
+                    <div class="style-511">
+                      <img src="https://assets.avito.ma/icons/svg/category_2030.svg" alt="Card Image" class="style-512" />
+                    </div>
+                    <span class="style-513">Motos</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div data-index="2" class="style-515" tabindex="-1" aria-hidden="false">
+              <div class="style-516">
+                <a href="https://www.avito.ma/fr/maroc/ventes_immobilieres-à_vendre" class="style-517">
+                  <div class="style-518">
+                    <div class="style-519">
+                      <img src="https://assets.avito.ma/icons/svg/category_1200.svg" alt="Card Image" class="style-520" />
+                    </div>
+                    <span class="style-521">Ventes Immobilières</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 4 -->
+            <div data-index="3" class="style-523" tabindex="-1" aria-hidden="false">
+              <div class="style-524">
+                <a href="https://www.avito.ma/fr/maroc/locations_immobilieres-à_louer" class="style-525">
+                  <div class="style-526">
+                    <div class="style-527">
+                      <img src="https://assets.avito.ma/icons/svg/category_1300.svg" alt="Card Image" class="style-528" />
+                    </div>
+                    <span class="style-529">Location Immobilière</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 5 -->
+            <div data-index="4" class="style-531" tabindex="-1" aria-hidden="false">
+              <div class="style-532">
+                <a href="https://www.avito.ma/fr/maroc/appartement_location_de_vacances-location_de_vacances" class="style-533">
+                  <div class="style-534">
+                    <div class="style-535">
+                      <img src="https://assets.avito.ma/icons/svg/category_1010.svg" alt="Card Image" class="style-536" />
+                    </div>
+                    <span class="style-537">Appartement location de vacances</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 6 -->
+            <div data-index="5" class="style-539" tabindex="-1" aria-hidden="false">
+              <div class="style-540">
+                <a href="https://www.avito.ma/fr/maroc/pour_la_maision_et_jardin-à_vendre" class="style-541">
+                  <div class="style-542">
+                    <div class="style-543">
+                      <img src="https://assets.avito.ma/icons/svg/category_3000.svg" alt="Card Image" class="style-544" />
+                    </div>
+                    <span class="style-545">Maison et Jardin</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 7 -->
+            <div data-index="6" class="style-547" tabindex="-1" aria-hidden="false">
+              <div class="style-548">
+                <a href="https://www.avito.ma/fr/maroc/informatique_et_multimedia-à_vendre" class="style-549">
+                  <div class="style-550">
+                    <div class="style-551">
+                      <img src="https://assets.avito.ma/icons/svg/category_5000.svg" alt="Card Image" class="style-552" />
+                    </div>
+                    <span class="style-553">Informatique, Multimedia et Gadgets</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 8 -->
+            <div data-index="7" class="style-555" tabindex="-1" aria-hidden="false">
+              <div class="style-556">
+                <a href="https://www.avito.ma/fr/maroc/habillement_et_bien_etre-à_vendre" class="style-557">
+                  <div class="style-558">
+                    <div class="style-559">
+                      <img src="https://assets.avito.ma/icons/svg/category_8000.svg" alt="Card Image" class="style-560" />
+                    </div>
+                    <span class="style-561">Habillement et Mode</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div> <!-- style-498 -->
+        </div> <!-- style-497 -->
+      </div> <!-- style-496 -->
+    </div> <!-- style-495 -->
+  </div> <!-- style-494 -->
+</div> <!-- style-492 -->
+
+<div class="premium-listings-container">
+  <div class="premium-listings-wrapper">
+    <div class="premium-listings-inner">
+      <header class="premium-listings-header">
+        <div class="premium-listings-title-container">
+          <h2 class="premium-listings-title">Notre Annonces premium</h2>
+        </div>
+      </header>
+      <section class="premium-listings-section">
+        <div class="premium-listings-content">
+          <div class="premium-listings-carousel">
+            <div class="premium-listings-carousel-inner" dir="ltr">
+              <button aria-label="Annonce précédente" class="carousel-prev-button">
+                <svg class="carousel-arrow-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Annonce précédente</title>
+                  <path d="M18.973 10.77A1.03 1.03 0 0120 11.795a1.03 1.03 0 01-1.027 1.027H7.503l5.001 5.02a1.023 1.023 0 11-1.447 1.449L4.3 12.515c-.4-.4-.4-1.048 0-1.448L11.067 4.3c.4-.4 1.047-.4 1.448 0 .4.4.4 1.058 0 1.458L7.504 10.77h11.47z"></path>
+                </svg>
+              </button>
+              <div class="carousel-slide-container">
+                <div class="carousel-slides">
+                  <% @listings.each_with_index do |listing, index| %>
+                    <div data-index="<%= index %>" class="carousel-slide" tabindex="-1" aria-hidden="false">
+                      <div class="listing-card">
+                        <a target="_self" href="<%= listing_path(listing) %>" class="listing-link">
+                          <div class="listing-header">
+                            <div class="listing-user-info">
+                              <div class="listing-user-avatar">
+                              <% if listing.user.avatar.attached? %>
+                              <%= image_tag listing.user.avatar, class: "avatar-image" %>
+                              <% else %>
+                              <img src="/phoenix-assets/imgs/profile/avatar.svg" class="avatar-image" />
+                            <% end %>
+                            
+                              </div>
+                              <div class="listing-user-details">
+                                <div class="listing-username">
+                                  <p class="username-text" font-weight="600"><%= listing.user.username %></p>
+                                </div>
+                                <div class="listing-time">
+                                  <svg class="clock-icon" height="12" width="12" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
+                                    <title>ClockOutline Icon</title>
+                                    <g clip-path="url(#clip0_442_9017)">
+                                      <path d="M8.293 4.364a4.147 4.147 0 11-8.276-.376l.688.062a3.453 3.453 0 00.569 2.234A3.456 3.456 0 103.833.924L3.77.233a4.151 4.151 0 014.523 4.13zM1.957 1.691l-.438-.534a4.19 4.19 0 00-.58.581l.534.437a3.46 3.46 0 01.484-.484zm1.202-.639L2.962.391a4.141 4.141 0 00-.76.31l.324.61c.202-.107.414-.193.633-.259zM1.093 2.746l-.61-.325a4.151 4.151 0 00-.31.76l.662.197c.065-.219.151-.431.258-.633zm2.708-.455V3.77a.691.691 0 00-.25.25H2.42v.691h1.13a.689.689 0 10.941-.94V2.29h-.69z"></path>
+                                    </g>
+                                    <defs>
+                                      <clipPath>
+                                        <path d="M0 0h8.293v8.293H0z" transform="translate(0 .218)"></path>
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                  <p class="time-text"><%= time_ago_in_words(listing.created_at) %></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="premium-badge">
+                              <div class="premium-badge-inner">
+                                <svg class="premium-icon" height="12" width="12" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
+                                  <title>Premium Icon</title>
+                                  <path d="M5.593 1.7a.85.85 0 10-.838.001l-.004.008c-.28.581-.666 1.414-1.264 1.727-.49.257-1.196.128-1.72.032a.638.638 0 10-.752.672l1.253 3.237c.19.491.663.815 1.19.815h3.43c.526 0 .999-.324 1.19-.815L9.33 4.14a.638.638 0 10-.752-.691c-.535.07-1.226.158-1.72-.1-.586-.307-.979-1.082-1.266-1.649z"></path>
+                                </svg>Premium
+                              </div>
+                            </div>
+                          </div>
+                          <div class="listing-image-container">
+                            <div class="listing-image-wrapper">
+                              <div class="listing-image-overlay"></div>
+                              <div class="listing-image">
+                                <% if listing.images.any? %>
+                                  <img src="<%= listing.images.first.url %>" loading="lazy" class="listing-main-image" />
+                                <% else %>
+                                  <img src="/images/placeholder.jpg" loading="lazy" class="listing-main-image" />
+                                <% end %>
+                              </div>
+                              <div class="listing-image-count">
+                                <span class="image-count-wrapper">
+                                  <svg class="camera-icon" height="12" width="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Camera Icon</title>
+                                    <path d="M9.3 4h5.4l1.647 1.778H19.2c.99 0 1.8.8 1.8 1.778v10.666C21 19.2 20.19 20 19.2 20H4.8c-.99 0-1.8-.8-1.8-1.778V7.556c0-.978.81-1.778 1.8-1.778h2.853L9.3 4zM12 17.333c2.484 0 4.5-1.99 4.5-4.444 0-2.453-2.016-4.445-4.5-4.445s-4.5 1.992-4.5 4.445c0 2.453 2.016 4.444 4.5 4.444zm0-1.777c1.491 0 2.7-1.194 2.7-2.667 0-1.473-1.209-2.667-2.7-2.667s-2.7 1.194-2.7 2.667c0 1.473 1.209 2.667 2.7 2.667z"></path>
+                                  </svg>
+                                  <span class="image-count"><%= listing.images.count %></span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="listing-details">
+                            <div class="listing-main-details">
+                              <div class="listing-location-info">
+                                <div class="location-wrapper">
+                                  <svg class="location-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Location Icon</title>
+                                    <path d="M14.004 21.99a.87.87 0 00.142.01c.45 0 .865-.29 1.032-.739l6.688-17.648a1.218 1.218 0 00-.245-1.268 1.072 1.072 0 00-1.201-.261L3.7 9.144c-.47.199-.756.71-.69 1.239.064.534.463.953.966 1.019l8.057 1.063 1.008 8.504c.062.532.459.953.963 1.021z"></path>
+                                  </svg>
+                                  <p class="location-text">
+                                    <%= listing.category.name %> dans <%= listing.location&.city || 'Non précisé' %>
+                                  </p>
+                                </div>
+                              </div>
+                              <p class="listing-title" title="<%= listing.title %>"><%= listing.title %></p>
+                              
+                              <% if listing.category.slug == 'voitures' %>
+                                <div class="listing-attributes">
+                                  <% if listing.respond_to?(:year) && listing.year.present? %>
+                                    <span class="attribute-item">
+                                      <div title="Année-Modèle" class="attribute-wrapper">
+                                        <div class="attribute-separator"></div>
+                                        <span class="attribute-text"><%= listing.year %></span>
+                                      </div>
+                                    </span>
+                                  <% end %>
+                                  
+                                  <% if listing.respond_to?(:transmission) && listing.transmission.present? %>
+                                    <span class="attribute-item">
+                                      <div title="Boite de vitesses" class="attribute-wrapper">
+                                        <div class="attribute-separator"></div>
+                                        <span class="attribute-text"><%= listing.transmission %></span>
+                                      </div>
+                                    </span>
+                                  <% end %>
+                                  
+                                  <% if listing.respond_to?(:fuel_type) && listing.fuel_type.present? %>
+                                    <span class="attribute-item">
+                                      <div title="Type de carburant" class="attribute-wrapper">
+                                        <div class="attribute-separator"></div>
+                                        <span class="attribute-text"><%= listing.fuel_type %></span>
+                                      </div>
+                                    </span>
+                                  <% end %>
+                                </div>
+                              <% end %>
+                            </div>
+                            <div class="listing-price-container">
+                              <div class="price-wrapper">
+                                <div class="price-inner">
+                                  <p class="price-text">
+                                    <span class="price-amount">
+                                      <span dir="auto" class="price-value"><%= number_with_delimiter(listing.price) %></span>
+                                      <span class="price-currency">DH</span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              <button aria-label="Annonce suivante" class="carousel-next-button">
+                <svg class="carousel-arrow-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Annonce suivante</title>
+                  <path d="M5.027 12.823A1.03 1.03 0 014 11.796a1.03 1.03 0 011.027-1.027h11.47l-5.001-5.02A1.023 1.023 0 1112.943 4.3l6.757 6.777c.4.4.4 1.047 0 1.448l-6.767 6.767c-.4.4-1.047.4-1.448 0-.4-.4-.4-1.058 0-1.459l5.011-5.01H5.026z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+    </div>
+         <div class="style-4743">
+                        <div class="style-4744">
+                            <div class="style-4745">
+                                <p class="style-4746" font-weight="400">Voitures neuves</p>
+                                <div class="style-4747">
+                                    <div wrap="true" class="style-4748">
+                                        <div class="style-4749">
+                                            <p class="style-4750" font-weight="200"><a class="style-4751">renault clio</a><span class="style-4752">|</span></p>
+                                        </div>
+                                        <div class="style-4753">
+                                            <p class="style-4754" font-weight="200"><a class="style-4755">dacia dokker</a><span class="style-4756">|</span></p>
+                                        </div>
+                                        <div class="style-4757">
+                                            <p class="style-4758" font-weight="200"><a class="style-4759">dacia logan</a><span class="style-4760">|</span></p>
+                                        </div>
+                                        <div class="style-4785">
+                                            <p class="style-4786" font-weight="200"><a class="style-4787">hyundai tucson</a><span class="style-4788">|</span></p>
+                                        </div>
+                                        <div class="style-4789">
+                                            <p class="style-4790" font-weight="200"><a class="style-4791">toyota yaris</a><span class="style-4792">|</span></p>
+                                        </div>
+                                        <div class="style-4793">
+                                            <p class="style-4794" font-weight="200"><a class="style-4795">hyundai accent</a><span class="style-4796">|</span></p>
+                                        </div>
+                                        <div class="style-4797">
+                                            <p class="style-4798" font-weight="200"><a class="style-4799">volkswagen caddy</a><span class="style-4800">|</span></p>
+                                        </div>
+                                        <div class="style-4801">
+                                            <p class="style-4802" font-weight="200"><a class="style-4803">peugeot partner</a><span class="style-4804">|</span></p>
+                                        </div>
+                                        <div class="style-4805">
+                                            <p class="style-4806" font-weight="200"><a class="style-4807">hyundai i20</a><span class="style-4808">|</span></p>
+                                        </div>
+                                        <div class="style-4809">
+                                            <p class="style-4810" font-weight="200"><a class="style-4811">peugeot 3008</a><span class="style-4812">|</span></p>
+                                        </div>
+                                        <div class="style-4813">
+                                            <p class="style-4814" font-weight="200"><a class="style-4815">citroen berlingo</a><span class="style-4816">|</span></p>
+                                        </div>
+                                        <div class="style-4817">
+                                            <p class="style-4818" font-weight="200"><a class="style-4819">fiat fiorino</a><span class="style-4820">|</span></p>
+                                        </div>
+                                        <div class="style-4821">
+                                            <p class="style-4822" font-weight="200"><a class="style-4823">dacia lodgy</a><span class="style-4824">|</span></p>
+                                        </div>
+                                        <div class="style-4825">
+                                            <p class="style-4826" font-weight="200"><a class="style-4827">skoda octavia</a><span class="style-4828">|</span></p>
+                                        </div>
+                                        <div class="style-4829">
+                                            <p class="style-4830" font-weight="200"><a class="style-4831">peugeot 301</a><span class="style-4832">|</span></p>
+                                        </div>
+                                        <div class="style-4833">
+                                            <p class="style-4834" font-weight="200"><a class="style-4835">volkswagen tiguan</a><span class="style-4836">|</span></p>
+                                        </div>
+                                        <div class="style-4837">
+                                            <p class="style-4838" font-weight="200"><a class="style-4839">volkswagen touareg</a><span class="style-4840">|</span></p>
+                                        </div>
+                                        <div class="style-4841">
+                                            <p class="style-4842" font-weight="200"><a class="style-4843">ford kuga</a><span class="style-4844">|</span></p>
+                                        </div>
+                                        <div class="style-4845">
+                                            <p class="style-4846" font-weight="200"><a class="style-4847">renault koleos</a><span class="style-4848">|</span></p>
+                                        </div>
+                                        <div class="style-4849">
+                                            <p class="style-4850" font-weight="200"><a class="style-4851">ford fiesta</a><span class="style-4852">|</span></p>
+                                        </div>
+                                        <div class="style-4853">
+                                            <p class="style-4854" font-weight="200"><a class="style-4855">fiat doblo</a><span class="style-4856">|</span></p>
+                                        </div>
+                                        <div class="style-4857">
+                                            <p class="style-4858" font-weight="200"><a class="style-4859">seat leon</a><span class="style-4860">|</span></p>
+                                        </div>
+                                        <div class="style-4861">
+                                            <p class="style-4862" font-weight="200"><a class="style-4863">nissan micra</a><span class="style-4864">|</span></p>
+                                        </div>
+                                        <div class="style-4865">
+                                            <p class="style-4866" font-weight="200"><a class="style-4867">volkswagen golf</a><span class="style-4868">|</span></p>
+                                        </div>
+                                        <div class="style-4869">
+                                            <p class="style-4870" font-weight="200"><a class="style-4871">citroen c elysee</a><span class="style-4872">|</span></p>
+                                        </div>
+                                        <div class="style-4873">
+                                            <p class="style-4874" font-weight="200"><a class="style-4875">hyundai creta</a><span class="style-4876">|</span></p>
+                                        </div>
+                                        <div class="style-4877">
+                                            <p class="style-4878" font-weight="200"><a class="style-4879">fiat 500</a><span class="style-4880">|</span></p>
+                                        </div>
+                                        <div class="style-4881">
+                                            <p class="style-4882" font-weight="200"><a class="style-4883">opel astra</a><span class="style-4884">|</span></p>
+                                        </div>
+                                        <div class="style-4885">
+                                            <p class="style-4886" font-weight="200"><a class="style-4887">toyota c-hr</a><span class="style-4888">|</span></p>
+                                        </div>
+                                        <div class="style-4889">
+                                            <p class="style-4890" font-weight="200"><a class="style-4891">renault megane</a><span class="style-4892">|</span></p>
+                                        </div>
+                                        <div class="style-4893">
+                                            <p class="style-4894" font-weight="200"><a class="style-4895">seat ateca</a><span class="style-4896">|</span></p>
+                                        </div>
+                                        <div class="style-4897">
+                                            <p class="style-4898" font-weight="200"><a class="style-4899">fiat tipo</a><span class="style-4900">|</span></p>
+                                        </div>
+                                        <div class="style-4901">
+                                            <p class="style-4902" font-weight="200"><a class="style-4903">jeep renegade</a><span class="style-4904">|</span></p>
+                                        </div>
+                                        <div class="style-4905">
+                                            <p class="style-4906" font-weight="200"><a class="style-4907">peugeot 308</a><span class="style-4908">|</span></p>
+                                        </div>
+                                        <div class="style-4909">
+                                            <p class="style-4910" font-weight="200"><a class="style-4911">hyundai grand i10</a><span class="style-4912">|</span></p>
+                                        </div>
+                                        <div class="style-4913">
+                                            <p class="style-4914" font-weight="200"><a class="style-4915">peugeot 2008</a><span class="style-4916">|</span></p>
+                                        </div>
+                                        <div class="style-4917">
+                                            <p class="style-4918" font-weight="200"><a class="style-4919">toyota corolla</a><span class="style-4920">|</span></p>
+                                        </div>
+                                        <div class="style-4921">
+                                            <p class="style-4922" font-weight="200"><a class="style-4923">ford ecosport</a><span class="style-4924">|</span></p>
+                                        </div>
+                                        <div class="style-4925">
+                                            <p class="style-4926" font-weight="200"><a class="style-4927">volkswagen jetta</a><span class="style-4928">|</span></p>
+                                        </div>
+                                        <div class="style-4929">
+                                            <p class="style-4930" font-weight="200"><a class="style-4931">skoda kodiaq</a><span class="style-4932">|</span></p>
+                                        </div>
+                                        <div class="style-4933">
+                                            <p class="style-4934" font-weight="200"><a class="style-4935">opel grandland x</a><span class="style-4936">|</span></p>
+                                        </div>
+                                        <div class="style-4937">
+                                            <p class="style-4938" font-weight="200"><a class="style-4939">bmw serie 5</a><span class="style-4940">|</span></p>
+                                        </div>
+                                        <div class="style-4941">
+                                            <p class="style-4942" font-weight="200"><a class="style-4943">skoda fabia</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="style-4944">
+                                <p class="style-4945" font-weight="400">Villes populaires</p>
+                                <div class="style-4946">
+                                    <div wrap="true" class="style-4947">
+                                        <div class="style-4948">
+                                            <p class="style-4949" font-weight="200"><a href="https://www.avito.ma/fr/casablanca" class="style-4950">Casablanca</a><span class="style-4951">|</span></p>
+                                        </div>
+                                        <div class="style-4952">
+                                            <p class="style-4953" font-weight="200"><a href="https://www.avito.ma/fr/agadir" class="style-4954">Agadir</a><span class="style-4955">|</span></p>
+                                        </div>
+                                        <div class="style-4956">
+                                            <p class="style-4957" font-weight="200"><a href="https://www.avito.ma/fr/rabat" class="style-4958">Rabat</a><span class="style-4959">|</span></p>
+                                        </div>
+                                        <div class="style-4960">
+                                            <p class="style-4961" font-weight="200"><a href="https://www.avito.ma/fr/al_hoceima" class="style-4962">Al Hoceïma</a><span class="style-4963">|</span></p>
+                                        </div>
+                                        <div class="style-4964">
+                                            <p class="style-4965" font-weight="200"><a href="https://www.avito.ma/fr/marrakech" class="style-4966">Marrakech</a><span class="style-4967">|</span></p>
+                                        </div>
+                                        <div class="style-4968">
+                                            <p class="style-4969" font-weight="200"><a href="https://www.avito.ma/fr/meknes" class="style-4970">Meknès</a><span class="style-4971">|</span></p>
+                                        </div>
+                                        <div class="style-4972">
+                                            <p class="style-4973" font-weight="200"><a href="https://www.avito.ma/fr/nador" class="style-4974">Nador</a><span class="style-4975">|</span></p>
+                                        </div>
+                                        <div class="style-4976">
+                                            <p class="style-4977" font-weight="200"><a href="https://www.avito.ma/fr/tanger" class="style-4978">Tanger</a><span class="style-4979">|</span></p>
+                                        </div>
+                                        <div class="style-4980">
+                                            <p class="style-4981" font-weight="200"><a href="https://www.avito.ma/fr/beni_mellal" class="style-4982">Béni Mellal</a><span class="style-4983">|</span></p>
+                                        </div>
+                                        <div class="style-4984">
+                                            <p class="style-4985" font-weight="200"><a href="https://www.avito.ma/fr/el_jadida" class="style-4986">El Jadida</a><span class="style-4987">|</span></p>
+                                        </div>
+                                        <div class="style-4988">
+                                            <p class="style-4989" font-weight="200"><a href="https://www.avito.ma/fr/errachidia" class="style-4990">Errachidia</a><span class="style-4991">|</span></p>
+                                        </div>
+                                        <div class="style-4992">
+                                            <p class="style-4993" font-weight="200"><a href="https://www.avito.ma/fr/fes" class="style-4994">Fès</a><span class="style-4995">|</span></p>
+                                        </div>
+                                        <div class="style-4996">
+                                            <p class="style-4997" font-weight="200"><a href="https://www.avito.ma/fr/kenitra" class="style-4998">Kénitra</a><span class="style-4999">|</span></p>
+                                        </div>
+                                        <div class="style-5000">
+                                            <p class="style-5001" font-weight="200"><a href="https://www.avito.ma/fr/oujda" class="style-5002">Oujda</a><span class="style-5003">|</span></p>
+                                        </div>
+                                        <div class="style-5004">
+                                            <p class="style-5005" font-weight="200"><a href="https://www.avito.ma/fr/khenifra" class="style-5006">khénifra</a><span class="style-5007">|</span></p>
+                                        </div>
+                                        <div class="style-5008">
+                                            <p class="style-5009" font-weight="200"><a href="https://www.avito.ma/fr/khouribga" class="style-5010">Khouribga</a><span class="style-5011">|</span></p>
+                                        </div>
+                                        <div class="style-5012">
+                                            <p class="style-5013" font-weight="200"><a href="https://www.avito.ma/fr/larache" class="style-5014">Larache</a><span class="style-5015">|</span></p>
+                                        </div>
+                                        <div class="style-5016">
+                                            <p class="style-5017" font-weight="200"><a href="https://www.avito.ma/fr/ouarzazate" class="style-5018">Ouarzazate</a><span class="style-5019">|</span></p>
+                                        </div>
+                                        <div class="style-5020">
+                                            <p class="style-5021" font-weight="200"><a href="https://www.avito.ma/fr/safi" class="style-5022">Safi</a><span class="style-5023">|</span></p>
+                                        </div>
+                                        <div class="style-5024">
+                                            <p class="style-5025" font-weight="200"><a href="https://www.avito.ma/fr/taza" class="style-5026">Taza</a><span class="style-5027">|</span></p>
+                                        </div>
+                                        <div class="style-5028">
+                                            <p class="style-5029" font-weight="200"><a href="https://www.avito.ma/fr/tetouan" class="style-5030">Tétouan</a><span class="style-5031">|</span></p>
+                                        </div>
+                                        <div class="style-5032">
+                                            <p class="style-5033" font-weight="200"><a href="https://www.avito.ma/fr/settat" class="style-5034">Settat</a><span class="style-5035">|</span></p>
+                                        </div>
+                                        <div class="style-5036">
+                                            <p class="style-5037" font-weight="200"><a href="https://www.avito.ma/fr/sale" class="style-5038">Salé</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+ 
+                <div class="style-5248">
+                    <div class="style-5249">
+                        <div class="style-5250">
+                            <hr color="#D0D0D0" class="style-5251" />
+                        </div>
+                        <div wrap="wrap" class="style-5252">
+                            <div wrap="wrap" class="style-5253">
+                                <p class="style-5254">©
+                                    <!-- -->
+                                    <!-- -->
+                                </p>
+                                <div class="style-5255"><a href="https://aide.avito.ma/7-securite/" class="style-5256">Protection utilisateur</a><span class="style-5257">•</span><a href="https://aide.avito.ma/5-reglement/" class="style-5258">Réglement</a><span class="style-5259">•</span><a href="https://aide.avito.ma/a-propos-davito/" class="style-5260">Qui sommes-nous?</a></div>
+                            </div>
+                            <div class="style-5261"><a href="https://www.facebook.com/Avito.ma" target="_blank" class="style-5262"><svg class="style-5263" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="FacebookTitleID">
+                                        <title class="style-5264">Facebook Icon</title>
+                                        <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" class="style-5265"></path>
+                                    </svg></a><a href="https://www.twitter.com/Avitoma" target="_blank" class="style-5266"><svg class="style-5267" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="TwitterTitleID">
+                                        <title class="style-5268">Twitter Icon</title>
+                                        <path d="M20 7c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.7-2.1.8-.6-.7-1.5-1-2.4-1-1.8 0-3.3 1.5-3.3 3.3 0 .3 0 .5.1.7-2.6-.1-5.1-1.4-6.7-3.4-.3.5-.4 1-.4 1.6 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4 0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H4c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4c.7-.4 1.3-1 1.7-1.7z" class="style-5269"></path>
+                                    </svg></a><a href="https://www.instagram.com/avito.ma" target="_blank" class="style-5270"><svg class="style-5271" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="InstagramLineTitleID">
+                                        <title class="style-5272">InstagramLine Icon</title>
+                                        <path d="M12 9a3 3 0 100 6 3 3 0 000-6zm0-2a5 5 0 110 10 5 5 0 010-10zm6.5-.25a1.25 1.25 0 01-2.5 0 1.25 1.25 0 012.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332a2.886 2.886 0 00-1.08.703 2.89 2.89 0 00-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331a2.92 2.92 0 001.08-.702c.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 00-.703-1.08 2.884 2.884 0 00-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 011.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772 4.915 4.915 0 01-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" class="style-5273"></path>
+                                    </svg></a><a href="https://www.youtube.com/channel/UCtslQB0IQ98Hfd-V3rNhzjA" target="_blank" class="style-5274"><svg class="style-5275" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="YoutubeTitleID">
+                                        <title class="style-5276">Youtube Icon</title>
+                                        <path d="M19.7 8.2c-.2-.7-.7-1.2-1.4-1.4-1.3-.4-6.3-.4-6.3-.4s-5 0-6.3.3c-.6.2-1.2.8-1.4 1.5C4 9.4 4 12 4 12s0 2.6.3 3.8c.2.7.7 1.2 1.4 1.4 1.3.4 6.3.4 6.3.4s5 0 6.3-.3c.7-.2 1.2-.7 1.4-1.4.3-1.3.3-3.9.3-3.9s0-2.6-.3-3.8zm-9.3 6.2V9.6l4.2 2.4-4.2 2.4z" class="style-5277"></path>
+                                    </svg></a><a href="https://www.linkedin.com/company/avitomaroc/" target="_blank" class="style-5278"><svg class="style-5279" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="LinkedinTitleID">
+                                        <title class="style-5280">Linkedin Icon</title>
+                                        <path d="M20 20h-3.6v-6c0-.9-1.1-1.7-2-1.7s-1.6.8-1.6 1.7v6H9.3V9.3h3.6v1.8c.6-1 2.1-1.6 3.1-1.6 2.2 0 4 1.8 4 4V20M7.6 20H4V9.3h3.6V20M5.8 4c1 0 1.8.8 1.8 1.8s-.8 1.8-1.8 1.8S4 6.8 4 5.8 4.8 4 5.8 4z" class="style-5281"></path>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div><noscript class="style-5282"><img src="https://certify.alexametrics.com/atrk.gif?account=s5qpi1awA+00aW" style="display:none;height:1;width:1" alt="" /><iframe src="https://www.googletagmanager.com/ns.html?id=undefined" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <next-route-announcer class="style-5283">
+        <p aria-live="assertive" role="alert" class="style-5284"></p>
+    </next-route-announcer>
+</body>
+  

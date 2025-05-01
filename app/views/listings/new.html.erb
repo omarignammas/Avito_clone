@@ -1,0 +1,174 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="listing-form-container">
+        <h2 class="form-title">Publier une nouvelle annonce</h2>
+        
+        <% if @listing.errors.any? %>
+          <div class="error-container">
+            <h3><%= pluralize(@listing.errors.count, "erreur") %> :</h3>
+            <ul>
+              <% @listing.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+        <%= form_with(model: @listing, html: { class: 'listing-form', multipart: true, data: { turbo: false } }) do |form| %>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <%= form.label :title, "Titre de l'annonce", class: 'form-label' %>
+                <%= form.text_field :title, class: 'form-control', placeholder: "Titre accrocheur pour votre annonce" %>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="form-group">
+                <%= form.label :price, "Prix (€)", class: 'form-label' %>
+                <%= form.number_field :price, class: 'form-control', step: '0.01', placeholder: "0.00" %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= form.label :category_id, "Catégorie", class: 'form-label' %>
+                <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Choisir une catégorie" }, { class: 'form-select' } %>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= form.label :condition, "État", class: 'form-label' %>
+                <%= form.select :condition, Listing::CONDITION_OPTIONS, { prompt: "Choisir l'état du produit" }, { class: 'form-select' } %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <%= form.label :description, "Description détaillée", class: 'form-label' %>
+            <%= form.text_area :description, rows: 6, class: 'form-control', placeholder: "Décrivez votre produit en détail (caractéristiques, état, raison de la vente...)" %>
+          </div>
+          
+          <div class="form-group">
+            <h3>Localisation</h3>
+            <%= form.fields_for :location do |location_form| %>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= location_form.label :city, "Ville", class: 'form-label' %>
+                    <%= location_form.text_field :city, class: 'form-control', placeholder: "Ville" %>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= location_form.label :address, "Adresse (optionnelle)", class: 'form-label' %>
+                    <%= location_form.text_field :address, class: 'form-control', placeholder: "Adresse" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Photos du produit</label>
+            <div class="image-upload-container" id="imageUploadContainer">
+              <i class="fa fa-cloud-upload upload-icon"></i>
+              <p class="upload-text">Cliquez ou glissez vos images ici</p>
+              <p>Maximum 5 photos</p>
+              <%= file_field_tag "images[]", multiple: true, class: "d-none", id: "imageUpload", accept: "image/*" %>
+            </div>
+            
+            <div class="image-preview-container" id="imagePreviewContainer">
+              <!-- Les aperçus d'images seront ajoutés ici par JavaScript -->
+            </div>
+          </div>
+          
+          <div class="form-actions text-end mt-4">
+            <%= link_to "Annuler", listings_path, class: "btn btn-secondary-custom me-2" %>
+            <%= form.submit "Publier l'annonce", class: "btn btn-primary-custom" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const imageUploadContainer = document.getElementById('imageUploadContainer');
+    const imageUpload = document.getElementById('imageUpload');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+    
+    imageUploadContainer.addEventListener('click', function() {
+      imageUpload.click();
+    });
+    
+    imageUploadContainer.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      imageUploadContainer.style.borderColor = '#4a89dc';
+      imageUploadContainer.style.backgroundColor = '#f4f7fb';
+    });
+    
+    imageUploadContainer.addEventListener('dragleave', function(e) {
+      e.preventDefault();
+      imageUploadContainer.style.borderColor = '#ddd';
+      imageUploadContainer.style.backgroundColor = '#f9f9f9';
+    });
+    
+    imageUploadContainer.addEventListener('drop', function(e) {
+      e.preventDefault();
+      imageUploadContainer.style.borderColor = '#ddd';
+      imageUploadContainer.style.backgroundColor = '#f9f9f9';
+      
+      const files = e.dataTransfer.files;
+      handleFiles(files);
+    });
+    
+    imageUpload.addEventListener('change', function() {
+      const files = this.files;
+      handleFiles(files);
+    });
+    
+    function handleFiles(files) {
+      if (imagePreviewContainer.children.length + files.length > 5) {
+        alert('Vous ne pouvez pas ajouter plus de 5 images.');
+        return;
+      }
+      
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        
+        if (!file.type.startsWith('image/')) {
+          continue;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const previewItem = document.createElement('div');
+          previewItem.className = 'preview-item';
+          
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          
+          const removeBtn = document.createElement('div');
+          removeBtn.className = 'remove-image';
+          removeBtn.innerHTML = '<i class="fa fa-times"></i>';
+          removeBtn.addEventListener('click', function() {
+            previewItem.remove();
+          });
+          
+          previewItem.appendChild(img);
+          previewItem.appendChild(removeBtn);
+          imagePreviewContainer.appendChild(previewItem);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  });
+</script>
